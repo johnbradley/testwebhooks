@@ -1,12 +1,12 @@
+#!/usr/bin/env bash
 SOURCEFILENAME="DukeDSClient.spec"
-TARGETFILENAME="testc.txt"
-COMMITMSG="DukeDSClient update"
+TARGETFILENAME="DukeDSClient-$TRAVIS_TAG-gcb01.spec"
+COMMITMSG="DukeDSClient module update"
 COMMITUSER="John Bradley"
 COMMITEMAIL="johnbradley2008@gmail.com"
 COMMITBRANCH="master"
 BASE64CONTENT=`base64 $SOURCEFILENAME`
-echo $BASE64CONTENT
- 
+
 # Upload file to another repo
 curl -i -X PUT -H "Authorization: token $COMMIT_TOKEN" \
    -d "{ \"path\": \"$TARGETFILENAME\", \
